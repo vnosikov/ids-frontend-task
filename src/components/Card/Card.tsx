@@ -7,9 +7,7 @@ import { Sprites } from './Sprites';
 import { Wrapper, Header } from './styled';
 
 export const Card: React.FC<IBasePokemon> = ({ name, url }) => {
-  const { data, error } = useSWR(url, fetcher);
-
-  console.log('DETAILS', name, data);
+  const { data } = useSWR(url, fetcher);
 
   const isLoading = (data === undefined);
 

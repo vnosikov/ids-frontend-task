@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useSWR from "swr";
 import { ClipLoader } from "react-spinners";
 import fetcher from "../../api/fetcher";
@@ -12,7 +12,7 @@ export const HomePage = () => {
   const page = Number(pageParam);
 
   const pokemonsListUrl = `https://pokeapi.co/api/v2/pokemon?offset=${page * LIMIT}&limit=${LIMIT}`
-  const { data, error } = useSWR(pokemonsListUrl, fetcher);
+  const { data } = useSWR(pokemonsListUrl, fetcher);
 
   if (!data) {
     return <ClipLoader />
@@ -23,7 +23,7 @@ export const HomePage = () => {
 
   return (
     <div>
-      IDS test task
+      <div><Link to="/filters">Filters</Link></div>
       <List results={results} />
       <Pages pagesNumber={totalPages}/>
     </div>

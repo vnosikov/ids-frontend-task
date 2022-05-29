@@ -1,1 +1,3 @@
-export default (url: string) => fetch(url).then((res) => res.json());
+import axios from "axios";
+
+export default async (url: string) => (await axios.get(url)).data;
