@@ -3,6 +3,7 @@ import { ClipLoader } from 'react-spinners';
 import useSWR from 'swr';
 import fetcher from '../../api/fetcher';
 import { IBasePokemon } from '../../types/pokemon';
+import { Abilities } from './Abilities';
 import { Sprites } from './Sprites';
 import { Wrapper, Header } from './styled';
 
@@ -16,7 +17,7 @@ export const Card: React.FC<IBasePokemon> = ({ name, url }) => {
       <Header>{name}</Header>
       {isLoading && <ClipLoader />}
       {!isLoading && <Sprites sprites={data.sprites} />}
-      {!isLoading && <div>abils</div>}
+      {!isLoading && <Abilities abilities={data.abilities}/>}
     </Wrapper>
   );
 }
