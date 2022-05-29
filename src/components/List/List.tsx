@@ -5,7 +5,6 @@ import { Card } from "../Card";
 import { Wrapper } from "./styled";
 
 export const List: React.FC<Props> = ({ results }) => {
-  console.log(results);
   return (
     <Wrapper>
       {results.map((pokemon) => (

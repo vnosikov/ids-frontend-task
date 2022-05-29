@@ -1,3 +1,7 @@
 import axios from "axios";
 
-export default async (url: string) => (await axios.get(url)).data;
+const fetcher = async (url: string) => {
+  return (await axios.get(url)).data;
+};
+
+export default fetcher;
