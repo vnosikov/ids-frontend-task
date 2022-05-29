@@ -30,6 +30,8 @@ libs/**/grammar.js
 
 .stylelintcache
 
+.yarn
+
 # Apple cache file
 .DS_Store
 

@@ -1,12 +1,17 @@
-export const Pages = () => (
-  <>
-    <>1</>
-    <>2</>
-    <>3</>
-    <>4</>
-    <>5</>
-    <>6</>
-    <>7</>
-    <>8</>
-  </>
-);
+import React from 'react';
+import { times } from 'lodash';
+import { PageButton, Wrapper } from './styled';
+
+export const Pages: React.FC<Props> = ({ pagesNumber }) => (
+  <Wrapper>
+    {times(pagesNumber, String).map(i => (
+      <PageButton key={i} to={`/${i}`} >
+        {i}
+      </PageButton>
+    ))}
+  </Wrapper>
+)
+
+interface Props {
+  pagesNumber: number;
+};
