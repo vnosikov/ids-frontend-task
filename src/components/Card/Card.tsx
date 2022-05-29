@@ -1,23 +1,23 @@
-import React from 'react';
-import { ClipLoader } from 'react-spinners';
-import useSWR from 'swr';
-import fetcher from '../../api/fetcher';
-import { IBasePokemon } from '../../types/pokemon';
-import { Abilities } from './Abilities';
-import { Sprites } from './Sprites';
-import { Wrapper, Header } from './styled';
+import React from "react";
+import { ClipLoader } from "react-spinners";
+import useSWR from "swr";
+import fetcher from "../../api/fetcher";
+import { IBasePokemon } from "../../types/pokemon";
+import { Abilities } from "./Abilities";
+import { Sprites } from "./Sprites";
+import { Wrapper, Header } from "./styled";
 
 export const Card: React.FC<IBasePokemon> = ({ name, url }) => {
   const { data } = useSWR(url, fetcher);
 
-  const isLoading = (data === undefined);
+  const isLoading = data === undefined;
 
   return (
     <Wrapper>
       <Header>{name}</Header>
       {isLoading && <ClipLoader />}
       {!isLoading && <Sprites sprites={data.sprites} />}
-      {!isLoading && <Abilities abilities={data.abilities}/>}
+      {!isLoading && <Abilities abilities={data.abilities} />}
     </Wrapper>
   );
-}
+};

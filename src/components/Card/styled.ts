@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 18%;
+  width: 18vw;
   height: 240px;
   border: 1px solid black;
 `;
@@ -13,5 +13,5 @@ export const Header = styled.div`
 `;
 
 export const AbilitiesWrapper = styled.div`
-  margin: 0 24px; 
+  margin: 0 24px;
 `;

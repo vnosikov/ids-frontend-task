@@ -1,1 +1,1 @@
-export { FilteredSearch } from './FilteredSearch';
+export { FilteredSearch } from "./FilteredSearch";

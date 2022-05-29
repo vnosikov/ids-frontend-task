@@ -12,6 +12,6 @@ const App = () => (
       <Route path="/filters" element={<FilteredSearch />} />
     </Routes>
   </BrowserRouter>
-)
+);
 
 export default App;

@@ -7,9 +7,16 @@ export const Wrapper = styled.div`
 `;
 
 export const PageButton = styled(NavLink)`
+  display: block;
   width: 32px;
-  height: 32px'
+  padding: 8px;
   margin: 8px;
   text-decoration: none;
   color: black;
+  border: 1px solid black;
+`;
+
+export const ActivePageButton = styled(PageButton)`
+  background-color: grey;
+  cursor: default;
 `;

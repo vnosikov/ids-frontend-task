@@ -1,5 +1,5 @@
-import React from 'react';
-import { AbilitiesWrapper } from './styled';
+import React from "react";
+import { AbilitiesWrapper } from "./styled";
 
 export const Abilities: React.FC<Props> = ({ abilities }) => (
   <AbilitiesWrapper>
@@ -10,7 +10,9 @@ export const Abilities: React.FC<Props> = ({ abilities }) => (
 );
 
 interface Props {
-  abilities: Array<{ ability: {
-    name: string;
-  }}>;
-};
+  abilities: Array<{
+    ability: {
+      name: string;
+    };
+  }>;
+}
