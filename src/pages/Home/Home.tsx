@@ -14,8 +14,6 @@ export const HomePage = () => {
   const pokemonsListUrl = `https://pokeapi.co/api/v2/pokemon?offset=${page * LIMIT}&limit=${LIMIT}`
   const { data, error } = useSWR(pokemonsListUrl, fetcher);
 
-  console.log('WOW', data);
-
   if (!data) {
     return <ClipLoader />
   }
@@ -26,7 +24,7 @@ export const HomePage = () => {
   return (
     <div>
       IDS test task
-      <List />
+      <List results={results} />
       <Pages pagesNumber={totalPages}/>
     </div>
   );
